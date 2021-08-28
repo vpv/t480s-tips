@@ -142,7 +142,7 @@ STOP_CHARGE_THRESH_BAT0=75
 - Enable tlp by running `systemctl enable tlp`
 - When you need to charge the battery full, run `tlp fullcharge`
 
-# Spotifyn asennus
+# Spotify installation
 - `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 - `flatpak install flathub com.spotify.Client`
 
