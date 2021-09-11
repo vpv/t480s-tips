@@ -148,6 +148,11 @@ STOP_CHARGE_THRESH_BAT0=75
 
 [See the Fedora documentation.](https://docs.fedoraproject.org/en-US/quick-docs/installing-spotify/)
 
+# Firmware updates
+The T480s is supported by [LVFS](https://fwupd.org/) and [fwupd](https://github.com/fwupd/fwupd). In a default Fedora Gnome installation [Gnome Software](https://gitlab.gnome.org/GNOME/gnome-software) will notify you of new firmware updates. In September 2021 I got the first firmware update through fwupd and Gnome Software. After a reboot, the update never started. [This is a known bug.](https://github.com/fwupd/fwupd/wiki/LVFS-Triaged-Issue:-Failed-to-run-update-on-reboot). The bug has probably already been fixed in upstream [shim](https://github.com/rhboot/shim/), but for some reason the fixes are not in Fedora 34 yet.
+
+The solution is to disable Secure Boot from the UEFI/BIOS configuration screen. With Secure Boot disabled, I was able to install the firmware update with Gnome Software. After installing the update, you should be able to re-enable Secure Boot.
+
 # Personal reminder
 - To ease up things when working in different networks and connecting back to home, you have disabled IPv6 in Gnome's Network settings. At some point it might be more harmful than useful.
 
