@@ -142,6 +142,18 @@ STOP_CHARGE_THRESH_BAT0=75
 - Enable tlp by running `systemctl enable tlp`
 - When you need to charge the battery full, run `tlp fullcharge`
 
+- Running `tlp-stat` as root with tlp 1.5 gives these warnings:
+```
+Error: conflicting power-profiles-daemon.service is enabled, power saving will not apply on boot.
+>>> Invoke 'systemctl mask power-profiles-daemon.service' to correct this!
+Warning: systemd-rfkill.service is not masked, radio device switching may not work as configured.
+>>> Invoke 'systemctl mask systemd-rfkill.service' to correct this.
+Warning: systemd-rfkill.socket is not masked, radio device switching may not work as configured.
+>>> Invoke 'systemctl mask systemd-rfkill.socket' to correct this.
+```
+
+This is what I have done. If you ever wish to turn back to using power-profiles-daemon and systemd-rfkill, you will have to unmask these services. At that point it would probably be good to just remove the tlp package.
+
 # Spotify installation
 - `flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`
 - `flatpak install flathub com.spotify.Client`
